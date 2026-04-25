@@ -9,256 +9,45 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
-      --bg: #faf9f7;
-      --surface: #ffffff;
-      --border: rgba(0,0,0,0.08);
-      --border-hover: rgba(0,0,0,0.18);
-      --text-primary: #1a1a18;
-      --text-secondary: #6b6b67;
-      --text-muted: #a0a09b;
-      --accent: #1a1a18;
-      --tag-bg: #f1efea;
-      --tag-text: #6b6b67;
+      --bg: #faf9f7; --surface: #ffffff; --border: rgba(0,0,0,0.08);
+      --text-primary: #1a1a18; --text-secondary: #6b6b67; --text-muted: #a0a09b;
+      --tag-bg: #f1efea; --tag-text: #6b6b67;
     }
-
     html { scroll-behavior: smooth; }
-
-    body {
-      background: var(--bg);
-      color: var(--text-primary);
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 400;
-      line-height: 1.6;
-      min-height: 100vh;
-    }
-
-    /* ---- layout ---- */
-    .container {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-
-    /* ---- header ---- */
-    header {
-      padding: 5rem 0 3.5rem;
-      border-bottom: 0.5px solid var(--border);
-    }
-
-    .header-eyebrow {
-      font-family: 'DM Mono', monospace;
-      font-size: 11px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 1rem;
-    }
-
-    h1 {
-      font-family: 'DM Serif Display', serif;
-      font-size: clamp(2.2rem, 5vw, 3rem);
-      font-weight: 400;
-      line-height: 1.15;
-      color: var(--text-primary);
-      margin-bottom: 1rem;
-    }
-
-    .header-bio {
-      font-size: 15px;
-      color: var(--text-secondary);
-      max-width: 480px;
-      line-height: 1.7;
-    }
-
-    .header-links {
-      display: flex;
-      gap: 1.5rem;
-      margin-top: 1.75rem;
-    }
-
-    .header-links a {
-      font-family: 'DM Mono', monospace;
-      font-size: 11px;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      transition: color 0.15s;
-    }
-
+    body { background: var(--bg); color: var(--text-primary); font-family: 'DM Sans', sans-serif; font-weight: 400; line-height: 1.6; min-height: 100vh; }
+    .container { max-width: 760px; margin: 0 auto; padding: 0 2rem; }
+    header { padding: 5rem 0 2rem; border-bottom: 0.5px solid var(--border); }
+    .header-eyebrow { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1rem; }
+    h1 { font-family: 'DM Serif Display', serif; font-size: clamp(2.2rem, 5vw, 3rem); font-weight: 400; line-height: 1.15; color: var(--text-primary); margin-bottom: 1rem; }
+    .header-bio { font-size: 15px; color: var(--text-secondary); max-width: 480px; line-height: 1.7; }
+    .header-links { display: flex; gap: 1.5rem; margin-top: 1.75rem; }
+    .header-links a { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted); text-decoration: none; display: flex; align-items: center; gap: 5px; transition: color 0.15s; }
     .header-links a:hover { color: var(--text-primary); }
-
-    /* ---- section ---- */
-    .section-label {
-      font-family: 'DM Mono', monospace;
-      font-size: 10px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin: 3.5rem 0 1.5rem;
-    }
-
-    /* ---- project cards ---- */
-    .projects {
-      display: flex;
-      flex-direction: column;
-      gap: 1px;
-      border: 0.5px solid var(--border);
-      border-radius: 12px;
-      overflow: hidden;
-      background: var(--border);
-    }
-
-    .card {
-      background: var(--surface);
-      padding: 1.75rem 2rem;
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 1rem;
-      align-items: start;
-      transition: background 0.15s;
-      text-decoration: none;
-      color: inherit;
-    }
-
+    .section-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin: 1rem 0 1rem; }
+    .projects { display: flex; flex-direction: column; gap: 1px; border: 0.5px solid var(--border); border-radius: 12px; overflow: hidden; background: var(--border); }
+    .card { background: var(--surface); padding: 1.75rem 2rem; display: grid; grid-template-columns: 1fr auto; gap: 1rem; align-items: start; transition: background 0.15s; text-decoration: none; color: inherit; }
     .card:hover { background: #f7f6f3; }
-
     .card-left { min-width: 0; }
-
-    .card-header {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 6px;
-    }
-
-    .card-icon {
-      width: 28px;
-      height: 28px;
-      border-radius: 6px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 14px;
-      flex-shrink: 0;
-    }
-
-    .card-title {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 16px;
-      font-weight: 500;
-      color: var(--text-primary);
-    }
-
-    .card-desc {
-      font-size: 14px;
-      color: var(--text-secondary);
-      line-height: 1.65;
-      margin-bottom: 1rem;
-    }
-
-    .card-stack {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
-
-    .tag {
-      font-family: 'DM Mono', monospace;
-      font-size: 10px;
-      background: var(--tag-bg);
-      color: var(--tag-text);
-      border-radius: 4px;
-      padding: 3px 8px;
-      letter-spacing: 0.03em;
-    }
-
-    .card-right {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      align-items: flex-end;
-      padding-top: 2px;
-    }
-
-    .card-date {
-      font-family: 'DM Mono', monospace;
-      font-size: 10px;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      white-space: nowrap;
-    }
-
-    .card-type {
-      font-family: 'DM Mono', monospace;
-      font-size: 10px;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      white-space: nowrap;
-    }
-
-    .card-link {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      font-family: 'DM Mono', monospace;
-      font-size: 10px;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      text-decoration: none;
-      transition: color 0.12s;
-    }
-
+    .card-header { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
+    .card-icon { width: 28px; height: 28px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; }
+    .card-title { font-family: 'DM Sans', sans-serif; font-size: 16px; font-weight: 500; color: var(--text-primary); }
+    .card-desc { font-size: 14px; color: var(--text-secondary); line-height: 1.65; margin-bottom: 1rem; }
+    .card-stack { display: flex; flex-wrap: wrap; gap: 6px; }
+    .tag { font-family: 'DM Mono', monospace; font-size: 10px; background: var(--tag-bg); color: var(--tag-text); border-radius: 4px; padding: 3px 8px; letter-spacing: 0.03em; }
+    .card-right { display: flex; flex-direction: column; gap: 8px; align-items: flex-end; padding-top: 2px; }
+    .card-date { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted); white-space: nowrap; }
+    .card-type { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted); white-space: nowrap; }
+    .card-link { display: flex; align-items: center; gap: 4px; font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-muted); text-decoration: none; transition: color 0.12s; }
     .card-link:hover { color: var(--text-primary); }
-
-    /* ---- footer ---- */
-    footer {
-      padding: 3rem 0 4rem;
-      margin-top: 4rem;
-      border-top: 0.5px solid var(--border);
-    }
-
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    .footer-note {
-      font-family: 'DM Mono', monospace;
-      font-size: 11px;
-      color: var(--text-muted);
-      letter-spacing: 0.03em;
-    }
-
-    /* ---- animations ---- */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(12px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    header, .projects, footer {
-      animation: fadeUp 0.5s ease both;
-    }
-
+    footer { padding: 3rem 0 4rem; margin-top: 4rem; border-top: 0.5px solid var(--border); }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .footer-note { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--text-muted); letter-spacing: 0.03em; }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+    header, .projects, footer { animation: fadeUp 0.5s ease both; }
     .projects { animation-delay: 0.1s; }
     footer { animation-delay: 0.2s; }
-
-    /* ---- responsive ---- */
-    @media (max-width: 540px) {
-      .card { grid-template-columns: 1fr; }
-      .card-right { flex-direction: row; align-items: center; }
-    }
+    @media (max-width: 540px) { .card { grid-template-columns: 1fr; } .card-right { flex-direction: row; align-items: center; } }
   </style>
 </head>
 <body>
@@ -280,14 +69,13 @@
 
     <div class="projects">
 
-      <!-- idk pick a spot -->
       <div class="card">
         <div class="card-left">
           <div class="card-header">
             <div class="card-icon" style="background:#F0F4FF;">📍</div>
             <span class="card-title">idk pick a spot</span>
           </div>
-          <p class="card-desc">First vibe coded project! My team always have happy hours and group gatherings. So to avoide thinking about where to go each time, we stored a bunch of places nearby work and it'll auto pick for us!</p>
+          <p class="card-desc">First vibe coded project! My team always have happy hours and group gatherings. So to avoid thinking about where to go each time, we stored a bunch of places nearby work and it'll auto pick for us!</p>
           <div class="card-stack">
             <span class="tag">React</span>
             <span class="tag">Firebase</span>
@@ -304,7 +92,6 @@
         </div>
       </div>
 
-      <!-- Worth -->
       <div class="card">
         <div class="card-left">
           <div class="card-header">
@@ -328,14 +115,13 @@
         </div>
       </div>
 
-      <!-- Chess Opener -->
       <div class="card">
         <div class="card-left">
           <div class="card-header">
             <div class="card-icon" style="background:#E6F1FB;">♟</div>
             <span class="card-title">Chess opener</span>
           </div>
-          <p class="card-desc">Getting into Chess. I want to learn basic chess openings and how to defend or attack based on the opening. Practice attack and defense across 6 openings including Scholar's Mate, Fried Liver, and the Nimzo-Indian. Coach feedback, auto-play, and hints included.</p>
+          <p class="card-desc">Getting into chess. I want to learn basic openings and how to defend or attack based on them. Practice attack and defense across 6 openings including Scholar's Mate, Fried Liver, and the Nimzo-Indian. Coach feedback, auto-play, and hints included.</p>
           <div class="card-stack">
             <span class="tag">JavaScript</span>
             <span class="tag">HTML/CSS</span>
@@ -352,14 +138,13 @@
         </div>
       </div>
 
-      <!-- Word Imposter -->
       <div class="card">
         <div class="card-left">
           <div class="card-header">
             <div class="card-icon" style="background:#FAEEDA;">💬</div>
             <span class="card-title">Word imposter</span>
           </div>
-          <p class="card-desc">Saw this Word Imposter Tiktok game, want someone to play with, so I built some bots to play along. A 4-player party game where one person doesn't know the secret word. Give one-word clues, spot the fake, don't get caught. AI bots powered by Claude play alongside you across 6 categories.</p>
+          <p class="card-desc">Saw this Word Imposter TikTok game, wanted someone to play with, so I built some bots to play with me. A 4-player party game where one person doesn't know the secret word. Give one-word clues, spot the fake, don't get caught. AI bots powered by Claude across 6 categories.</p>
           <div class="card-stack">
             <span class="tag">React</span>
             <span class="tag">Claude API</span>
@@ -380,7 +165,7 @@
 
     <footer>
       <div class="footer-inner">
-        <span class="footer-note">sunny xu · nyc </span>
+        <span class="footer-note">sunny xu · hi from nyc</span>
         <a class="footer-note" style="text-decoration:none;" href="https://www.linkedin.com/in/xusunny" target="_blank">linkedin.com/in/xusunny ↗</a>
       </div>
     </footer>
