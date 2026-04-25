@@ -22,7 +22,7 @@
     h1 { font-family: 'DM Serif Display', serif; font-size: clamp(2.2rem, 5vw, 3rem); font-weight: 400; line-height: 1.15; color: var(--text-primary); margin-bottom: 1rem; }
     .header-bio { font-size: 15px; color: var(--text-secondary); max-width: 480px; line-height: 1.7; }
     .header-links { display: flex; gap: 1.5rem; margin-top: 1.75rem; }
-    .header-links a { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted); text-decoration: none; display: flex; align-items: center; gap: 5px; transition: color 0.15s; }
+    .header-links a { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.06em; text-transform: lowercase; color: var(--text-muted); text-decoration: none; display: flex; align-items: center; gap: 5px; transition: color 0.15s; }
     .header-links a:hover { color: var(--text-primary); }
     .section-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin: 1rem 0 1rem; }
     .projects { display: flex; flex-direction: column; gap: 1px; border: 0.5px solid var(--border); border-radius: 12px; overflow: hidden; background: var(--border); }
@@ -40,7 +40,7 @@
     .card-type { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted); white-space: nowrap; }
     .card-link { display: flex; align-items: center; gap: 4px; font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-muted); text-decoration: none; transition: color 0.12s; }
     .card-link:hover { color: var(--text-primary); }
-    footer { padding: 3rem 0 4rem; margin-top: 4rem; border-top: 0.5px solid var(--border); }
+    footer { padding: 3rem 0 4rem; border-top: 0.5px solid var(--border); }
     .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
     .footer-note { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--text-muted); letter-spacing: 0.03em; }
     @keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
@@ -68,29 +68,6 @@
     <p class="section-label">Projects</p>
 
     <div class="projects">
-
-      <div class="card">
-        <div class="card-left">
-          <div class="card-header">
-            <div class="card-icon" style="background:#F0F4FF;">📍</div>
-            <span class="card-title">idk pick a spot</span>
-          </div>
-          <p class="card-desc">First vibe coded project! My team always have happy hours and group gatherings. So to avoid thinking about where to go each time, we stored a bunch of places nearby work and it'll auto pick for us!</p>
-          <div class="card-stack">
-            <span class="tag">React</span>
-            <span class="tag">Firebase</span>
-            <span class="tag">Maps API</span>
-          </div>
-        </div>
-        <div class="card-right">
-          <span class="card-date">Nov 2025</span>
-          <span class="card-type">Web App</span>
-          <a class="card-link" href="https://idkpickaspot.web.app/disney" target="_blank">
-            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            Live
-          </a>
-        </div>
-      </div>
 
       <div class="card">
         <div class="card-left">
@@ -125,7 +102,7 @@
           <div class="card-stack">
             <span class="tag">JavaScript</span>
             <span class="tag">HTML/CSS</span>
-            <span class="tag">Chess logic</span>
+            <span class="tag">Game</span>
           </div>
         </div>
         <div class="card-right">
@@ -147,8 +124,8 @@
           <p class="card-desc">Saw this Word Imposter TikTok game, wanted someone to play with, so I built some bots to play with me. A 4-player party game where one person doesn't know the secret word. Give one-word clues, spot the fake, don't get caught. AI bots powered by Claude across 6 categories.</p>
           <div class="card-stack">
             <span class="tag">React</span>
-            <span class="tag">Claude API</span>
-            <span class="tag">Game logic</span>
+            <span class="tag">Social Media</span>
+            <span class="tag">Game</span>
           </div>
         </div>
         <div class="card-right">
@@ -161,6 +138,29 @@
         </div>
       </div>
 
+        <div class="card">
+        <div class="card-left">
+          <div class="card-header">
+            <div class="card-icon" style="background:#F0F4FF;">📍</div>
+            <span class="card-title">idk pick a spot</span>
+          </div>
+          <p class="card-desc">First vibe coded project! My team always have happy hours and group gatherings. So to avoid thinking about where to go each time, we stored a bunch of places nearby work and it'll auto pick for us!</p>
+          <div class="card-stack">
+            <span class="tag">React</span>
+            <span class="tag">Firebase</span>
+            <span class="tag">Maps API</span>
+          </div>
+        </div>
+        <div class="card-right">
+          <span class="card-date">Nov 2025</span>
+          <span class="card-type">Web App</span>
+          <a class="card-link" href="https://idkpickaspot.web.app/disney" target="_blank">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Live
+          </a>
+        </div>
+      </div>
+      
     </div>
 
     <footer>
